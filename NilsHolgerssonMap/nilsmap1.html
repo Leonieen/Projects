@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8888b4321265b55d97b82a15a0219b7d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8888b4321265b55d97b82a15a0219b7d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8888b4321265b55d97b82a15a0219b7d = L.map(
+                "map_8888b4321265b55d97b82a15a0219b7d",
+                {
+                    center: [61.800453, 16.582614],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e8d4ec84a00681d4b7dc13e9af309c6d = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/geonie/ckwncbbrd0yrr14s9jxw55m7f/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2VvbmllIiwiYSI6ImNrd25ieHlvczJpbngycG52djFybmpwbmoifQ.IipoXG1Ioqw4iGxjGeXLWA",
+                {"attribution": "My Data Attribution", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var heat_map_6b63dded6b9353e05cd2937d6d5ec008 = L.heatLayer(
+                [[59.4864, 18.98332], [59.491643, 18.989755], [59.482083, 18.974522], [59.489871, 18.985391], [59.49042, 18.985933], [59.493582, 18.991045], [59.494603, 18.988814], [59.49403, 18.987862], [59.441829, 18.938494], [59.43939, 18.95076], [59.437625, 18.946707], [59.418525, 19.018959], [59.420552, 19.008597], [59.415413, 19.015203], [59.416604, 19.012434], [59.417354, 19.010847], [59.395249, 19.02593], [59.393867, 19.029027], [59.39556, 19.021665], [59.363791, 19.125868], [59.367084, 19.129774], [59.364952, 19.117872], [59.36106, 19.124092], [59.358458, 19.123617], [59.358275, 19.127698], [59.359591, 19.126185], [59.362675, 19.133253], [59.36384, 19.132532], [59.36589, 19.133099], [59.367748, 19.132074], [59.367251, 19.131574], [59.368945, 19.12609], [59.369407, 19.124279], [59.302657, 19.142872], [59.306191, 19.136076], [59.304316, 19.135689], [59.244519, 18.775782], [59.24495, 18.777654], [59.245752, 18.779463], [59.246747, 18.780152], [59.241176, 18.780061], [59.240338, 18.78539], [59.23816, 18.779938], [59.239266, 18.773709], [59.237416, 18.774276], [59.234466, 18.771546], [59.244329, 18.787869], [59.243766, 18.793316], [59.247759, 18.793883], [59.180476, 18.754117], [59.18243, 18.769816], [59.18239, 18.771213], [59.178691, 18.78338], [59.180666, 18.774858], [59.178423, 18.781809], [59.177811, 18.782127], [59.179379, 18.777974], [59.177884, 18.77562], [59.1765, 18.763838], [59.17762, 18.763348], [59.177673, 18.762759], [59.175853, 18.757935], [59.174278, 18.752701], [59.178737, 18.758602], [59.177544, 18.756947], [59.17561, 18.765054], [59.174872, 18.758895], [59.175014, 18.753675], [59.176041, 18.771896], [59.176938, 18.775042], [59.168457, 18.734168], [59.170799, 18.7443], [59.169801, 18.743683], [59.170125, 18.744313], [59.170637, 18.746506], [59.172723, 18.760778], [59.167823, 18.754269], [59.167102, 18.750933], [59.164413, 18.747855], [59.166352, 18.744216], [59.166601, 18.742737], [59.167723, 18.745311], [59.168724, 18.740185], [59.165103, 18.739194], [59.16473, 18.746209], [59.170257, 18.751559], [59.17223, 18.758868], [59.16865, 18.756461], [59.170581, 18.760875], [59.014796, 18.463713], [59.017013, 18.451056], [59.013872, 18.447168], [59.014636, 18.452229], [59.013079, 18.451289], [59.0108, 18.454162], [59.015708, 18.46926], [59.016886, 18.470581], [58.992962, 18.500829], [58.995911, 18.508096], [58.994349, 18.511003], [58.988954, 18.505455], [58.98844, 18.501536], [58.986869, 18.501464], [58.987826, 18.504609], [58.989758, 18.506634], [58.990088, 18.507399], [58.989926, 18.508375], [58.988462, 18.447831], [58.985859, 18.452063], [58.985276, 18.453032], [58.986038, 18.446038], [58.985569, 18.444424]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 20}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var marker_e4ed7d8b24d39c3a574310666bfb1ae2 = L.marker(
+                [55.427336, 13.470896],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_03955a0bd557e9931e3381ea764af2ed = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 1, "textColor": "#00ABDC"}
+            )
+            marker_e4ed7d8b24d39c3a574310666bfb1ae2.setIcon(beautify_icon_03955a0bd557e9931e3381ea764af2ed);
+        
+    
+        var popup_81e8ba756e55416f70ba5ce132debe37 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_7631e2f9da7cb89b7beb50fc453aa597 = $(`<div id="html_7631e2f9da7cb89b7beb50fc453aa597" style="width: 100.0%; height: 100.0%;"><h2>Destination 1 Västra Vemmenhög</h2><br/>               A small village in Skåne. This is where Nils Holgersson's journey begins <br/>               </div>`)[0];
+                popup_81e8ba756e55416f70ba5ce132debe37.setContent(html_7631e2f9da7cb89b7beb50fc453aa597);
+            
+        
+
+        marker_e4ed7d8b24d39c3a574310666bfb1ae2.bindPopup(popup_81e8ba756e55416f70ba5ce132debe37)
+        ;
+
+        
+    
+    
+            marker_e4ed7d8b24d39c3a574310666bfb1ae2.bindTooltip(
+                `<div>
+                     Västra Vemmenhög
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_51311e69b5b1a79464fd3a1ec1ec2ba0 = L.marker(
+                [55.854861, 14.133912],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_537d136c45eed0a2379244995f07fabb = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 2, "textColor": "#00ABDC"}
+            )
+            marker_51311e69b5b1a79464fd3a1ec1ec2ba0.setIcon(beautify_icon_537d136c45eed0a2379244995f07fabb);
+        
+    
+        var popup_229755ee4c1ff1c4ff48a3d453f6a5b5 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f7c9accb910eb306ab9b6a6e484804e6 = $(`<div id="html_f7c9accb910eb306ab9b6a6e484804e6" style="width: 100.0%; height: 100.0%;"><h2>Destination 2 Vittskövle Castle</h2><br/>               Vittskövle Castle is a very well preserved Renaissance castle near Kristianstad built in 1550. <br/>               </div>`)[0];
+                popup_229755ee4c1ff1c4ff48a3d453f6a5b5.setContent(html_f7c9accb910eb306ab9b6a6e484804e6);
+            
+        
+
+        marker_51311e69b5b1a79464fd3a1ec1ec2ba0.bindPopup(popup_229755ee4c1ff1c4ff48a3d453f6a5b5)
+        ;
+
+        
+    
+    
+            marker_51311e69b5b1a79464fd3a1ec1ec2ba0.bindTooltip(
+                `<div>
+                     Vittskövle Slott
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_334f647b7e566bdb368cee06c5b4bd6b = L.marker(
+                [55.50064, 14.230456],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_1b6d181620894761e210529876cf7efe = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 3, "textColor": "#00ABDC"}
+            )
+            marker_334f647b7e566bdb368cee06c5b4bd6b.setIcon(beautify_icon_1b6d181620894761e210529876cf7efe);
+        
+    
+        var popup_2968b20d97aa49c6a10ab9b0f1e7bfc0 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_4cdd72734711d469ee92b2719e55c517 = $(`<div id="html_4cdd72734711d469ee92b2719e55c517" style="width: 100.0%; height: 100.0%;"><h2>Destination 3 Glimmingehus</h2><br/>               Glimmingehus is one of the best preserved medieval castles in Skanidinavia. <br/>               <a href="https://www.raa.se/evenemang-och-upplevelser/upplev-kulturarvet/glimmingehus/" target="_blank">Check out Glimmingehus</a>'                            </div>`)[0];
+                popup_2968b20d97aa49c6a10ab9b0f1e7bfc0.setContent(html_4cdd72734711d469ee92b2719e55c517);
+            
+        
+
+        marker_334f647b7e566bdb368cee06c5b4bd6b.bindPopup(popup_2968b20d97aa49c6a10ab9b0f1e7bfc0)
+        ;
+
+        
+    
+    
+            marker_334f647b7e566bdb368cee06c5b4bd6b.bindTooltip(
+                `<div>
+                     Glimmingehus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3115a80b3010e14264cb5d66a7751d4c = L.marker(
+                [56.301716, 12.452369],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_aded1e9b9ecca039dd37b68612e70e23 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 4, "textColor": "#00ABDC"}
+            )
+            marker_3115a80b3010e14264cb5d66a7751d4c.setIcon(beautify_icon_aded1e9b9ecca039dd37b68612e70e23);
+        
+    
+        var popup_3bbb6e6ba92d024dcede2abdaad03d8e = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_cf2c67df750d98e75631bdac475c7fea = $(`<div id="html_cf2c67df750d98e75631bdac475c7fea" style="width: 100.0%; height: 100.0%;"><h2>Destination 4 Kullaberg</h2><br/>               The landscape of the Kullaberg is very diverse. Originally, the mountain was probably wooded. The mountain was apparently also used by people in the Stone Age. There are many caves to discover along the coastline and Carl von Linné travelled to Kullaberg.<br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Kullaberg.JPG" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_3bbb6e6ba92d024dcede2abdaad03d8e.setContent(html_cf2c67df750d98e75631bdac475c7fea);
+            
+        
+
+        marker_3115a80b3010e14264cb5d66a7751d4c.bindPopup(popup_3bbb6e6ba92d024dcede2abdaad03d8e)
+        ;
+
+        
+    
+    
+            marker_3115a80b3010e14264cb5d66a7751d4c.bindTooltip(
+                `<div>
+                     Kullaberg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0955e3c901dd36505a91d6ed79aeb506 = L.marker(
+                [56.161035, 15.586339],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_c539c3dc76879bf53b68f13782986261 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 5, "textColor": "#00ABDC"}
+            )
+            marker_0955e3c901dd36505a91d6ed79aeb506.setIcon(beautify_icon_c539c3dc76879bf53b68f13782986261);
+        
+    
+        var popup_9cc83616a6a098986e1f7d21f61e4d5f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_22b493b51d54ebc92dbaab4f6b767870 = $(`<div id="html_22b493b51d54ebc92dbaab4f6b767870" style="width: 100.0%; height: 100.0%;"><h2>Destination 5 Karlskrona</h2><br/>               The first city Nils sees in his life is Karlskrona. There he also meets the life-size wooden sculpture Gubben Rosenbom (The Old Rosenbom). This has stood there for around 250 years in front of the Admiralty Church Ulrica Pia in Karlskrona. The colorful sculpture in the shape of an old man in the uniform of a boatman dates from around 1750 and serves as a money collection box for alms. If you flip away the hat of the sculpture, you can put coins into the figure.<br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/karlskrona.png" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_9cc83616a6a098986e1f7d21f61e4d5f.setContent(html_22b493b51d54ebc92dbaab4f6b767870);
+            
+        
+
+        marker_0955e3c901dd36505a91d6ed79aeb506.bindPopup(popup_9cc83616a6a098986e1f7d21f61e4d5f)
+        ;
+
+        
+    
+    
+            marker_0955e3c901dd36505a91d6ed79aeb506.bindTooltip(
+                `<div>
+                     Karlskrona
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9cc9d7abdf82b7948e2d4649a086ca0 = L.marker(
+                [56.664756, 16.63482],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_2e749f570ef4886b6acf31ee86acd14d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 6, "textColor": "#00ABDC"}
+            )
+            marker_a9cc9d7abdf82b7948e2d4649a086ca0.setIcon(beautify_icon_2e749f570ef4886b6acf31ee86acd14d);
+        
+    
+        var popup_f5cd59ec1cbaa201e47c507edaaec7f1 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_8c84261a16a2a59fabfe517c4d65ae14 = $(`<div id="html_8c84261a16a2a59fabfe517c4d65ae14" style="width: 100.0%; height: 100.0%;"><h2>Destination 6 Öland</h2><br/>               Öland is an island off the southeastern coast of Sweden. On its west coast stands Borgholm Castle, the ruins of a structure that has been rebuilt several times since the 12th century. Nearby is Solliden Castle, the summer residence of the Swedish royal family, with its beautiful gardens and delicious cakes. Southern Öland is dominated by Stora Alvaret, a wide limestone plateau known for its biodiversity.<br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Oeland1.JPG" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/öland.jpg" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_f5cd59ec1cbaa201e47c507edaaec7f1.setContent(html_8c84261a16a2a59fabfe517c4d65ae14);
+            
+        
+
+        marker_a9cc9d7abdf82b7948e2d4649a086ca0.bindPopup(popup_f5cd59ec1cbaa201e47c507edaaec7f1)
+        ;
+
+        
+    
+    
+            marker_a9cc9d7abdf82b7948e2d4649a086ca0.bindTooltip(
+                `<div>
+                     Öland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52458e1198bbfeb90e8c721273de2c10 = L.marker(
+                [57.466102, 18.490626],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_48336da7a33fc76b7edb7c086a70304d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 7, "textColor": "#00ABDC"}
+            )
+            marker_52458e1198bbfeb90e8c721273de2c10.setIcon(beautify_icon_48336da7a33fc76b7edb7c086a70304d);
+        
+    
+        var popup_2cc203cea7e5f36ecedbcb5a4255b705 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_db1e433519262fa032e98fb3731feb92 = $(`<div id="html_db1e433519262fa032e98fb3731feb92" style="width: 100.0%; height: 100.0%;"><h2>Destination 7 Gotland</h2><br/>               Gotland, Sweden's largest island and is located in the Baltic Sea. The capital Visby experienced its heyday in the Middle Ages and is a UNESCO World Heritage Site due to its historic city center. The cult series "Pippi Longstocking" was largely filmed on Gotland and the Villa Kunterbunt can be visited. When visiting Gotland, I can especially recommend the north of the island. The stone surf pillars "Raukar" are limestone pillars that were formed by natural erosion during the last ice age. You can see them frequently on the island, and the most famous ones have even been given names.<br/>               </div>`)[0];
+                popup_2cc203cea7e5f36ecedbcb5a4255b705.setContent(html_db1e433519262fa032e98fb3731feb92);
+            
+        
+
+        marker_52458e1198bbfeb90e8c721273de2c10.bindPopup(popup_2cc203cea7e5f36ecedbcb5a4255b705)
+        ;
+
+        
+    
+    
+            marker_52458e1198bbfeb90e8c721273de2c10.bindTooltip(
+                `<div>
+                     Gotland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3ee36694c9531353f68cba6a2ed9352 = L.marker(
+                [57.733037, 15.761353],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_ac7344366badc9a4f8e14c92a5723aa3 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 8, "textColor": "#00ABDC"}
+            )
+            marker_c3ee36694c9531353f68cba6a2ed9352.setIcon(beautify_icon_ac7344366badc9a4f8e14c92a5723aa3);
+        
+    
+        var popup_d3ce151a9c269995506b6533eb15317e = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_df4d6801b30b9f870d67ae0519432fed = $(`<div id="html_df4d6801b30b9f870d67ae0519432fed" style="width: 100.0%; height: 100.0%;"><h2>Destination 8 Småland</h2><br/>               Småland is a historical province in southern Sweden. For children there is much to discover here, such as Nils Holgersson World and Astrid Lindgren's World in Vimmerby. Also in Småland is the town of Gränna, home of Sweden's world-famous candy canes.<br/>               </div>`)[0];
+                popup_d3ce151a9c269995506b6533eb15317e.setContent(html_df4d6801b30b9f870d67ae0519432fed);
+            
+        
+
+        marker_c3ee36694c9531353f68cba6a2ed9352.bindPopup(popup_d3ce151a9c269995506b6533eb15317e)
+        ;
+
+        
+    
+    
+            marker_c3ee36694c9531353f68cba6a2ed9352.bindTooltip(
+                `<div>
+                     Småland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d762e1568d71d034c1e9912df167b44a = L.marker(
+                [58.660557, 16.399143],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_20999296cf543b75b3a4ab3d5081a6cd = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 9, "textColor": "#00ABDC"}
+            )
+            marker_d762e1568d71d034c1e9912df167b44a.setIcon(beautify_icon_20999296cf543b75b3a4ab3d5081a6cd);
+        
+    
+        var popup_5f80f990bc6b594a37acfb22c57390a2 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_c13444e23fd3b2899c981f580d8e884a = $(`<div id="html_c13444e23fd3b2899c981f580d8e884a" style="width: 100.0%; height: 100.0%;"><h2>Destination 9 Kolmården</h2><br/>               We reach the boggy forests of Kolmarden. Kolmården is a forested ridge in Sweden southwest of Nyköping. In Kolmården there are a number of well-preserved finds from Swedish prehistory. In the Stone Age, what are now mountain peaks were islands in the Baltic Sea, used by Stone Age people as dwellings or resting places. For example, pieces of pottery with distinctive depressions typical of Scandinavia in the 4th millennium BC have been found near Säter.<br/>               </div>`)[0];
+                popup_5f80f990bc6b594a37acfb22c57390a2.setContent(html_c13444e23fd3b2899c981f580d8e884a);
+            
+        
+
+        marker_d762e1568d71d034c1e9912df167b44a.bindPopup(popup_5f80f990bc6b594a37acfb22c57390a2)
+        ;
+
+        
+    
+    
+            marker_d762e1568d71d034c1e9912df167b44a.bindTooltip(
+                `<div>
+                     Kolmården
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_37891ba68319a7d509f7264a04d70bec = L.marker(
+                [58.971568, 16.21516],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_aab1928d712ee90adb42aa474a3b103d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 10, "textColor": "#00ABDC"}
+            )
+            marker_37891ba68319a7d509f7264a04d70bec.setIcon(beautify_icon_aab1928d712ee90adb42aa474a3b103d);
+        
+    
+        var popup_b0a587e8994396b192d4c6ed613b2d81 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_cbcc0820787ce3c1bb62cc97355bae46 = $(`<div id="html_cbcc0820787ce3c1bb62cc97355bae46" style="width: 100.0%; height: 100.0%;"><h2>Destination 10 Stora Djulö</h2><br/>              During a night adventure, Nils enters a magical garden tended by the gardener "Mr. Karl". The garden is itself a miniature version of Södermanland. Stora Djulö is now a delightful café in an old manor house.<br/>              <a href="https://storadjulo.se/" target="_blank">Check out Stora Djulö</a></div>`)[0];
+                popup_b0a587e8994396b192d4c6ed613b2d81.setContent(html_cbcc0820787ce3c1bb62cc97355bae46);
+            
+        
+
+        marker_37891ba68319a7d509f7264a04d70bec.bindPopup(popup_b0a587e8994396b192d4c6ed613b2d81)
+        ;
+
+        
+    
+    
+            marker_37891ba68319a7d509f7264a04d70bec.bindTooltip(
+                `<div>
+                     Stora Djulö
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ec1a81da7042b23af0d87c53d2c09349 = L.marker(
+                [59.24436, 15.275398],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_68a108f02ddfbc3c552e1e206498fbce = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 11, "textColor": "#00ABDC"}
+            )
+            marker_ec1a81da7042b23af0d87c53d2c09349.setIcon(beautify_icon_68a108f02ddfbc3c552e1e206498fbce);
+        
+    
+        var popup_e47a1b4e6d2a6e39863695122f4ac25d = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_c1422cf1cc309356f77848236bde1aae = $(`<div id="html_c1422cf1cc309356f77848236bde1aae" style="width: 100.0%; height: 100.0%;"><h2>Destination 11 Närke</h2><br/>               Närke is located in the heart of Sweden and is one of the smallest provinces in the country. According to tradition, in Närke, and only here, there was a weather witch named Ysätter-Kajsa. This witch loved wind and storm and danced to it on the plain of Närke. Ysätter-Kajsa and her mischief were immortalized by Selma Lagerlöf in her famous novel "The Wonderful Journey of Little Nils Holgersson".<br/>               </div>`)[0];
+                popup_e47a1b4e6d2a6e39863695122f4ac25d.setContent(html_c1422cf1cc309356f77848236bde1aae);
+            
+        
+
+        marker_ec1a81da7042b23af0d87c53d2c09349.bindPopup(popup_e47a1b4e6d2a6e39863695122f4ac25d)
+        ;
+
+        
+    
+    
+            marker_ec1a81da7042b23af0d87c53d2c09349.bindTooltip(
+                `<div>
+                     Närke
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f8709a0c50f6212a8d885e62b4b98d6b = L.marker(
+                [59.966808, 16.008792],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_77e2138ffab9a8e6ad158f49f93e6de3 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 12, "textColor": "#00ABDC"}
+            )
+            marker_f8709a0c50f6212a8d885e62b4b98d6b.setIcon(beautify_icon_77e2138ffab9a8e6ad158f49f93e6de3);
+        
+    
+        var popup_223d6041b7c4700338e42d8c3c6316f6 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f2c0c73c711ca179bf32c48ff5a09851 = $(`<div id="html_f2c0c73c711ca179bf32c48ff5a09851" style="width: 100.0%; height: 100.0%;"><h2>Destination 12 Bergslagen, Västmanland</h2><br/>               Bergslagen is an area in central Sweden. It is known as the historic heartland of Swedish mining, metallurgy and industry. During the 20th century, most of the mines were closed, and in 2020, only three mines are still in use in the region. I can recommend a visit to the Sala underground silver mine in Västmanland. <br/>               <a href="https://www.salasilvergruva.se/" target="_blank">Check out Sala Silvergruva</a></div>`)[0];
+                popup_223d6041b7c4700338e42d8c3c6316f6.setContent(html_f2c0c73c711ca179bf32c48ff5a09851);
+            
+        
+
+        marker_f8709a0c50f6212a8d885e62b4b98d6b.bindPopup(popup_223d6041b7c4700338e42d8c3c6316f6)
+        ;
+
+        
+    
+    
+            marker_f8709a0c50f6212a8d885e62b4b98d6b.bindTooltip(
+                `<div>
+                     Bergslagen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8bfc51f0943381dc47413c181cab2d0d = L.marker(
+                [60.606487, 15.635294],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_216280df8a8b2ba1c61af60b27dca001 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 13, "textColor": "#00ABDC"}
+            )
+            marker_8bfc51f0943381dc47413c181cab2d0d.setIcon(beautify_icon_216280df8a8b2ba1c61af60b27dca001);
+        
+    
+        var popup_08f38644f3f93d85b42bda448fca66fe = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_1673fc8311555a8ae42f3fef3bcc078a = $(`<div id="html_1673fc8311555a8ae42f3fef3bcc078a" style="width: 100.0%; height: 100.0%;"><h2>Destination 13 Falun</h2><br/>               Falun is a town in the Swedish province of Dalarnas. The town in Dalarna, famous for its copper mine. In the 17th and 18th centuries, the mine "Stora Kopparberget" was the largest copper mine in the world. The pigment Falun red, extracted from the copper mine in Falun, became popular as an exterior paint from the 16th century onwards, as it gave color to the wooden houses that were prevalent in Sweden. Selma Lagerlöf herself spent most of her life in Falun. The building where she once lived has been demolished, but many of her personal belongings, including her library and study, are now in the Dalarna Museum.<br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Falun.jpg" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_08f38644f3f93d85b42bda448fca66fe.setContent(html_1673fc8311555a8ae42f3fef3bcc078a);
+            
+        
+
+        marker_8bfc51f0943381dc47413c181cab2d0d.bindPopup(popup_08f38644f3f93d85b42bda448fca66fe)
+        ;
+
+        
+    
+    
+            marker_8bfc51f0943381dc47413c181cab2d0d.bindTooltip(
+                `<div>
+                     Falun
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab7236ae864d41f7c43f04c580566067 = L.marker(
+                [60.889903, 14.664823],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_689d13a7f4d710cc6ae8a0c6dac9bfdf = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 14, "textColor": "#00ABDC"}
+            )
+            marker_ab7236ae864d41f7c43f04c580566067.setIcon(beautify_icon_689d13a7f4d710cc6ae8a0c6dac9bfdf);
+        
+    
+        var popup_ddb5e4118caa7b0a31153e34551796ed = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_4db7d2bccf6a598b600d08cb3980c027 = $(`<div id="html_4db7d2bccf6a598b600d08cb3980c027" style="width: 100.0%; height: 100.0%;"><h2>Destination 14 Siljansbygden</h2><br/>               In this region, whose folk culture is often considered the epitome of Swedishness, Nils sees a traditional Walpurgis Night celebration. Dalarna is home to the Dala horses. Here more about the history of the Dala horses:<br/>               <a href="https://www.theswedishwoodenhorse.com/dala-horse-history" target="_blank">Check out the history of Dala Horses</a></div>`)[0];
+                popup_ddb5e4118caa7b0a31153e34551796ed.setContent(html_4db7d2bccf6a598b600d08cb3980c027);
+            
+        
+
+        marker_ab7236ae864d41f7c43f04c580566067.bindPopup(popup_ddb5e4118caa7b0a31153e34551796ed)
+        ;
+
+        
+    
+    
+            marker_ab7236ae864d41f7c43f04c580566067.bindTooltip(
+                `<div>
+                     Siljansbygden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3837e5c3a9d8d997a9a013856421fc09 = L.marker(
+                [59.858429, 17.638921],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_cf11ceea5c493fae8eb4eba53044fc3c = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 15, "textColor": "#00ABDC"}
+            )
+            marker_3837e5c3a9d8d997a9a013856421fc09.setIcon(beautify_icon_cf11ceea5c493fae8eb4eba53044fc3c);
+        
+    
+        var popup_5ec45e6cfcf8efd9cbf85fe273e8ccea = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_01d4c74fff84a8619edc3dc1f4b9b536 = $(`<div id="html_01d4c74fff84a8619edc3dc1f4b9b536" style="width: 100.0%; height: 100.0%;"><h2>Destination 15 Uppsala</h2><br/>               In this "city ruled by wisdom," Nils meets various archetypal students and explores Swedish student culture. Lagerlöf was an honorary doctor of Uppsala University and an honorary member of Wermland's Nation. Uppsala is a city near Stockholm in Sweden. It is known for Uppsala University, which was founded in the 15th century. As an Augsburg resident, I would also like to mention the Gustavianum here. The magnificent Augsburg Cabinet of Curiosities was a gift from the city of Augsburg to King Gustav II Adolf (1632).<br/>               </div>`)[0];
+                popup_5ec45e6cfcf8efd9cbf85fe273e8ccea.setContent(html_01d4c74fff84a8619edc3dc1f4b9b536);
+            
+        
+
+        marker_3837e5c3a9d8d997a9a013856421fc09.bindPopup(popup_5ec45e6cfcf8efd9cbf85fe273e8ccea)
+        ;
+
+        
+    
+    
+            marker_3837e5c3a9d8d997a9a013856421fc09.bindTooltip(
+                `<div>
+                     Uppsala
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77d535ecb15a1a418077b711199856cc = L.marker(
+                [59.38678, 18.722948],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_0676fa773420598eb5cadac4a062fd3c = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 16, "textColor": "#00ABDC"}
+            )
+            marker_77d535ecb15a1a418077b711199856cc.setIcon(beautify_icon_0676fa773420598eb5cadac4a062fd3c);
+        
+    
+        var popup_66e752947054aee81a7beb1957b3d04f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_031f6e920b970f63f07ab0c216f21545 = $(`<div id="html_031f6e920b970f63f07ab0c216f21545" style="width: 100.0%; height: 100.0%;"><h2>Destination 16 Stockholm archipelago</h2><br/>               Species richness on Stockholm archipelago, see Heatmap, zoom in<br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/sch%C3%A4ren.jpg" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_66e752947054aee81a7beb1957b3d04f.setContent(html_031f6e920b970f63f07ab0c216f21545);
+            
+        
+
+        marker_77d535ecb15a1a418077b711199856cc.bindPopup(popup_66e752947054aee81a7beb1957b3d04f)
+        ;
+
+        
+    
+    
+            marker_77d535ecb15a1a418077b711199856cc.bindTooltip(
+                `<div>
+                     Stockholm archipelago
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2867fd57416da95ea6a9beac01d091a = L.marker(
+                [59.329245, 18.068461],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_773bc4c700d2843bdc3d0bdf8d6ae979 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 17, "textColor": "#00ABDC"}
+            )
+            marker_f2867fd57416da95ea6a9beac01d091a.setIcon(beautify_icon_773bc4c700d2843bdc3d0bdf8d6ae979);
+        
+    
+        var popup_e7d701b49e795d5b3f267992b4a2cf8f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f2bbc732a3d845be9401a7e9e0166638 = $(`<div id="html_f2bbc732a3d845be9401a7e9e0166638" style="width: 100.0%; height: 100.0%;"><h2>Destination 17 Stockholm</h2><br/>               Stockholm is the capital of Sweden and includes 14 islands of a large archipelago in the Baltic Sea, connected by more than 50 bridges. When visiting Stockholm I can highly recommend a visit to the Vasa Museum and the Nobel Museum. The Vasa was a Swedish galleon that was one of the largest and most heavily armed warships of its time. Already at the beginning of her maiden voyage on August 10, 1628, the Vasa sank after only about 1300 meters of sailing in a normal sea state due to serious structural instability.<br/>               <a href="https://www.vasamuseet.se/en" target="_blank">Check out the history of Vasa</a>               <a href="https://nobelprizemuseum.se/en/" target="_blank">Check out the nobel prize museum</a>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Stockholm1.JPG" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Stockholm2.JPG" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_e7d701b49e795d5b3f267992b4a2cf8f.setContent(html_f2bbc732a3d845be9401a7e9e0166638);
+            
+        
+
+        marker_f2867fd57416da95ea6a9beac01d091a.bindPopup(popup_e7d701b49e795d5b3f267992b4a2cf8f)
+        ;
+
+        
+    
+    
+            marker_f2867fd57416da95ea6a9beac01d091a.bindTooltip(
+                `<div>
+                     Stockholm
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6b86daaa0caee997ae02f31a7d7ba4b0 = L.marker(
+                [61.800453, 16.582614],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_3b836c3eda554a2971abaf613b83d38b = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 18, "textColor": "#00ABDC"}
+            )
+            marker_6b86daaa0caee997ae02f31a7d7ba4b0.setIcon(beautify_icon_3b836c3eda554a2971abaf613b83d38b);
+        
+    
+        var popup_d89866a37caf533b19cfc0ab1cb1b95b = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a51224ecafec59c3c4471fef59fd5406 = $(`<div id="html_a51224ecafec59c3c4471fef59fd5406" style="width: 100.0%; height: 100.0%;"><h2>Destination 18 Delsbo, Hudiksvall</h2><br/>               Here Nils sees "Fäboddrift", the traditional cattle breeding in northern Sweden. Hudiksvall is a small town founded in 1582 as a trading post. Although it lost trade to other coastal towns, suffered ten devastating fires, and was sacked by Russian troops in 1721, Hudiksvall managed to maintain its position as an important regional town. In the 18th century, due to its friendliness and lively social life, the town was given the name Glada Hudik, which has lasted to this day.<br/>               </div>`)[0];
+                popup_d89866a37caf533b19cfc0ab1cb1b95b.setContent(html_a51224ecafec59c3c4471fef59fd5406);
+            
+        
+
+        marker_6b86daaa0caee997ae02f31a7d7ba4b0.bindPopup(popup_d89866a37caf533b19cfc0ab1cb1b95b)
+        ;
+
+        
+    
+    
+            marker_6b86daaa0caee997ae02f31a7d7ba4b0.bindTooltip(
+                `<div>
+                     Delsbo, Hudiksvall
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6621ce36349f4942883407c1851112b9 = L.marker(
+                [63.159757, 17.246508],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_4ad843a285b9d361183d630e2afbe613 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 19, "textColor": "#00ABDC"}
+            )
+            marker_6621ce36349f4942883407c1851112b9.setIcon(beautify_icon_4ad843a285b9d361183d630e2afbe613);
+        
+    
+        var popup_916e74d38fb9718b1a9f4bb528458c8a = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_16864a089f136f0c622f847cac8c960e = $(`<div id="html_16864a089f136f0c622f847cac8c960e" style="width: 100.0%; height: 100.0%;"><h2>Destination 19 Västernorrland County</h2><br/>               Here, Nils takes a look at forestry and witnesses a large forest fire. The region is dominated by forests. I can highly recommend a side trip to the High Coast. <br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/P7080188.JPG" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/P7080249.JPG" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_916e74d38fb9718b1a9f4bb528458c8a.setContent(html_16864a089f136f0c622f847cac8c960e);
+            
+        
+
+        marker_6621ce36349f4942883407c1851112b9.bindPopup(popup_916e74d38fb9718b1a9f4bb528458c8a)
+        ;
+
+        
+    
+    
+            marker_6621ce36349f4942883407c1851112b9.bindTooltip(
+                `<div>
+                     Västernorrland County
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_73cc13a93503f10a60e1a3ef33b0caca = L.marker(
+                [67.137659, 20.659646],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_54b836d37a422f18791c664cc752f610 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 20, "textColor": "#00ABDC"}
+            )
+            marker_73cc13a93503f10a60e1a3ef33b0caca.setIcon(beautify_icon_54b836d37a422f18791c664cc752f610);
+        
+    
+        var popup_c5c56b2b3aa17d88c315203407d0d26e = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_403c66308ddc2a5ebd86a6c12ff58884 = $(`<div id="html_403c66308ddc2a5ebd86a6c12ff58884" style="width: 100.0%; height: 100.0%;"><h2>Destination 20 Gällivare</h2><br/>               Gällivare is located 70 kilometers north of the Arctic Circle. Here you also slowly get closer and closer to Santa Claus. Near Gällivare are also the national parks Muddus and Stora Sjöfallet, especially Stora Sjöfallet I can highly recommend for an excursion. <br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Polarkreis.JPG" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Tomten.jpg" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/storasjöfallet.jpg" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_c5c56b2b3aa17d88c315203407d0d26e.setContent(html_403c66308ddc2a5ebd86a6c12ff58884);
+            
+        
+
+        marker_73cc13a93503f10a60e1a3ef33b0caca.bindPopup(popup_c5c56b2b3aa17d88c315203407d0d26e)
+        ;
+
+        
+    
+    
+            marker_73cc13a93503f10a60e1a3ef33b0caca.bindTooltip(
+                `<div>
+                     Gällivare
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d759656810e6b28436057a2569de9fe = L.marker(
+                [67.85577, 20.225252],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_21749c5147009bd28db0fbde54f853a5 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 21, "textColor": "#00ABDC"}
+            )
+            marker_5d759656810e6b28436057a2569de9fe.setIcon(beautify_icon_21749c5147009bd28db0fbde54f853a5);
+        
+    
+        var popup_bee01efcb2d557af23fe04ecba7150b0 = L.popup({"maxWidth": 1000});
+
+        
+            
+                var html_8a02e5bae83b51a5d9c4e214cb7b3b91 = $(`<div id="html_8a02e5bae83b51a5d9c4e214cb7b3b91" style="width: 100.0%; height: 100.0%;"><h2>Destination 21 Kiruna</h2><br/>               Kiruna is the northernmost city in Sweden. In a Sami village by Lake Luossajaure, Nils learns about Sami culture. Laponia is definitely my favorite part of Sweden. If you are here I can definitely recommend to get to know the Sami culture. Also, you should definitely take the chance to listen to the sounds of a joik.<br/>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/P7130388.JPG" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/P7140419.JPG" alt="Trulli" style="max-width:100%;max-height:100%">               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/P7140428.JPG" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_bee01efcb2d557af23fe04ecba7150b0.setContent(html_8a02e5bae83b51a5d9c4e214cb7b3b91);
+            
+        
+
+        marker_5d759656810e6b28436057a2569de9fe.bindPopup(popup_bee01efcb2d557af23fe04ecba7150b0)
+        ;
+
+        
+    
+    
+            marker_5d759656810e6b28436057a2569de9fe.bindTooltip(
+                `<div>
+                     Kiruna
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6e0c83695b651bca21d50091f4a4ea1a = L.marker(
+                [62.271015, 13.810314],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_a9a20b42d46c6c3555703d2841faf85c = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 22, "textColor": "#00ABDC"}
+            )
+            marker_6e0c83695b651bca21d50091f4a4ea1a.setIcon(beautify_icon_a9a20b42d46c6c3555703d2841faf85c);
+        
+    
+        var popup_2dce1ffde0f5ea0e73557de14ba2d1c4 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_c7d1a68a560a4c776d1bbc59b616ea40 = $(`<div id="html_c7d1a68a560a4c776d1bbc59b616ea40" style="width: 100.0%; height: 100.0%;"><h2>Destination 22 Härjedalen</h2><br/>               When Nils and the geese pass Härjedalen, the weather is foggy, and Nils only learns about the province through the stories of his companions. He concludes that it is unsuitable for human inhabitants, who should leave the provinces to nature. It is the least populated province in Sweden. <br/>               </div>`)[0];
+                popup_2dce1ffde0f5ea0e73557de14ba2d1c4.setContent(html_c7d1a68a560a4c776d1bbc59b616ea40);
+            
+        
+
+        marker_6e0c83695b651bca21d50091f4a4ea1a.bindPopup(popup_2dce1ffde0f5ea0e73557de14ba2d1c4)
+        ;
+
+        
+    
+    
+            marker_6e0c83695b651bca21d50091f4a4ea1a.bindTooltip(
+                `<div>
+                     Härjedalen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a287ae7bc35700a8b8b7e62dd3feea6f = L.marker(
+                [63.183161, 14.597231],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_e8a1767828fa7e1ebe3ba3b17ef9b4a2 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 23, "textColor": "#00ABDC"}
+            )
+            marker_a287ae7bc35700a8b8b7e62dd3feea6f.setIcon(beautify_icon_e8a1767828fa7e1ebe3ba3b17ef9b4a2);
+        
+    
+        var popup_7c2b1f1f3e89200e1bbb4b18ac823293 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f3374fbd3733e3b3cb32b165bbc0a585 = $(`<div id="html_f3374fbd3733e3b3cb32b165bbc0a585" style="width: 100.0%; height: 100.0%;"><h2>Destination 23 Östersund</h2><br/>               Östersund is the only city in Jämtland, and its economic and political center. The city is famous for its location to nearby nature and for its winter activities. The city is located approximately in the center of Sweden. The geographic center of Sweden, by the way, is on Flataklocken, a mountain in the Medelpad landscape, west of Sundsvall.<br/>               </div>`)[0];
+                popup_7c2b1f1f3e89200e1bbb4b18ac823293.setContent(html_f3374fbd3733e3b3cb32b165bbc0a585);
+            
+        
+
+        marker_a287ae7bc35700a8b8b7e62dd3feea6f.bindPopup(popup_7c2b1f1f3e89200e1bbb4b18ac823293)
+        ;
+
+        
+    
+    
+            marker_a287ae7bc35700a8b8b7e62dd3feea6f.bindTooltip(
+                `<div>
+                     Östersund
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_243571a47b1becb8df87dd7133eb1e82 = L.marker(
+                [59.78046, 13.232316],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_75ab69ae0cb7868379c7c80ccbb8674f = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 24, "textColor": "#00ABDC"}
+            )
+            marker_243571a47b1becb8df87dd7133eb1e82.setIcon(beautify_icon_75ab69ae0cb7868379c7c80ccbb8674f);
+        
+    
+        var popup_4bf472486ea6343b9399d0bdc7a3ad33 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_85470b7b85397116d0fb861a7844a0df = $(`<div id="html_85470b7b85397116d0fb861a7844a0df" style="width: 100.0%; height: 100.0%;"><h2>Destination 24 Mårbacka</h2><br/>               Selma Lagerlöf, one of the world's most famous writers, grew up on Mårbacka. Even as a young girl, she wanted to be a writer.<br/>               <a href="https://marbacka.com/en/" target="_blank">Learn more about Selma Lagerlöf</a></div>`)[0];
+                popup_4bf472486ea6343b9399d0bdc7a3ad33.setContent(html_85470b7b85397116d0fb861a7844a0df);
+            
+        
+
+        marker_243571a47b1becb8df87dd7133eb1e82.bindPopup(popup_4bf472486ea6343b9399d0bdc7a3ad33)
+        ;
+
+        
+    
+    
+            marker_243571a47b1becb8df87dd7133eb1e82.bindTooltip(
+                `<div>
+                     Mårbacka
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_207799dc8e8ccdc986f27ea88f69d912 = L.marker(
+                [58.578334, 11.066847],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_7d8c7693480c2ce2fa43c737e2784283 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 25, "textColor": "#00ABDC"}
+            )
+            marker_207799dc8e8ccdc986f27ea88f69d912.setIcon(beautify_icon_7d8c7693480c2ce2fa43c737e2784283);
+        
+    
+        var popup_58ba2e215b614c96130604490f8aef72 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_cfc78ab23997da4ee98f7f673807481f = $(`<div id="html_cfc78ab23997da4ee98f7f673807481f" style="width: 100.0%; height: 100.0%;"><h2>Destination 25 Väderöarna</h2><br/>               I can highly to recommend You can hike wonderfully over the countless archipelagos. In addition, a side trip to Tanumshede is recommended. Around Tanumshede many ancient rock paintings have been found.<br/>               <a href="https://www.vitlyckemuseum.se/en/"target="_blank">Learn more about the world of the Bronze Age</a>               <img src="https://raw.githubusercontent.com/Leonieen/Resume/main/pictures/Väderöarna.JPG" alt="Trulli" style="max-width:100%;max-height:100%"></div>`)[0];
+                popup_58ba2e215b614c96130604490f8aef72.setContent(html_cfc78ab23997da4ee98f7f673807481f);
+            
+        
+
+        marker_207799dc8e8ccdc986f27ea88f69d912.bindPopup(popup_58ba2e215b614c96130604490f8aef72)
+        ;
+
+        
+    
+    
+            marker_207799dc8e8ccdc986f27ea88f69d912.bindTooltip(
+                `<div>
+                     Väderöarna
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9436f39aa75f84c06b7a32cb1c65e536 = L.marker(
+                [57.816158, 12.400513],
+                {}
+            ).addTo(map_8888b4321265b55d97b82a15a0219b7d);
+        
+    
+            var beautify_icon_4833517793bcc6c60fabc0816a80ac83 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#00ABDC", "borderWidth": 3, "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": true, "spin": false, "text": 26, "textColor": "#00ABDC"}
+            )
+            marker_9436f39aa75f84c06b7a32cb1c65e536.setIcon(beautify_icon_4833517793bcc6c60fabc0816a80ac83);
+        
+    
+        var popup_f6b89a5a40d52fac76dcaad48a7f5677 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_de1103fa22d2731c7ad1786219f9e129 = $(`<div id="html_de1103fa22d2731c7ad1786219f9e129" style="width: 100.0%; height: 100.0%;"><h2>Destination 26 Nääs Slott</h2><br/>               Nääs is Sweden's best-preserved manor from the late 19th century, one of Sweden's largest providers of arts and crafts courses, and a place where people have always come together to create lifelong memories. Selma Lagerlöf spent many of her summers here.<br/>               <a href="https://uk.naas.se/"target="_blank">Learn more about Nääs Slott</a></div>`)[0];
+                popup_f6b89a5a40d52fac76dcaad48a7f5677.setContent(html_de1103fa22d2731c7ad1786219f9e129);
+            
+        
+
+        marker_9436f39aa75f84c06b7a32cb1c65e536.bindPopup(popup_f6b89a5a40d52fac76dcaad48a7f5677)
+        ;
+
+        
+    
+    
+            marker_9436f39aa75f84c06b7a32cb1c65e536.bindTooltip(
+                `<div>
+                     Nääs Slott
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
