@@ -24,13 +24,6 @@ colour==0.1.5
 commonmark==0.9.1
 contourpy==1.0.6
 cycler==0.11.0
-dash==2.6.1
-dash-bootstrap-components==1.2.1
-dash-core-components==2.0.0
-dash-cytoscape==0.3.0
-dash-html-components==2.0.0
-dash-table==5.0.0
-dash-tools==1.8.2
 debugpy==1.6.3
 decorator==5.1.1
 distlib==0.3.5
@@ -45,7 +38,6 @@ folium==0.13.0
 fonttools==4.38.0
 gdown==4.6.0
 geojson==2.5.0
-geopandas==0.12.1
 gitdb==4.0.10
 GitPython==3.1.29
 gunicorn==20.1.0
@@ -56,7 +48,6 @@ iniconfig==1.1.1
 install==1.3.5
 ipyevents==2.0.1
 ipyfilechooser==0.6.0
-ipykernel==6.17.0
 ipyleaflet==0.17.2
 ipython==8.6.0
 ipytree==0.2.2
@@ -83,6 +74,7 @@ nodeenv==1.7.0
 numba==0.56.4
 numpy==1.23.2
 opencv-python==4.6.0.66
+packaging==20.0
 pandas==1.4.3
 parso==0.8.3
 patsy==0.5.2
@@ -94,7 +86,6 @@ platformdirs==2.5.2
 plotly==5.10.0
 plotly-express==0.4.1
 pluggy==0.13.1
-pooch==1.6.0
 pre-commit==2.16.0
 prompt-toolkit==3.0.32
 protobuf==3.20.3
@@ -114,7 +105,6 @@ pyshp==2.3.1
 PySocks==1.7.1
 pystac==1.6.1
 pystac-client==0.5.1
-pytesseract==0.3.10
 pytest==6.2.2
 python-box==6.1.0
 python-dateutil==2.8.2
