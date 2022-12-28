@@ -1,4 +1,4 @@
-﻿folium==0.13.0
+folium==0.13.0
 gunicorn==20.1.0
 kaleido==0.2.1
 leafmap==0.15.0
